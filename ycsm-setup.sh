@@ -68,13 +68,13 @@ ycsm_install() {
 
   ycsm_action "Installing certbot..."
   #git clone https://github.com/certbot/certbot.git /opt/letsencrypt > /dev/null 2>&1
-  sudo add-apt-repository ppa:certbot/certbot -y
-  apt update
-  apt-get install python-certbot-nginx -y
-  apt-get install python3-certbot-nginx -y
-  #echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list.d/certbot.list
-  #apt-get update
-  #apt-get install python-certbot-nginx -t stretch-backports
+  #sudo add-apt-repository ppa:certbot/certbot -y
+  #apt update
+  #apt-get install python-certbot-nginx -y
+  #apt-get install python3-certbot-nginx -y
+  echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list.d/certbot.list
+  apt-get update
+  apt-get install python-certbot-nginx -t stretch-backports
 
 
   ycsm_action "Copy nginx.conf, maps & security configuration into nginx folder"
